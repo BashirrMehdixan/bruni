@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-black font-['Roboto_Condensed']
+    }
+}
+
+.overlay {
+    @apply fixed w-full h-full left-0 top-0 bg-[#545454]/80 z-[1] transition-opacity duration-500
+}
+
+.overlay.scroll {
+    @apply bg-[#545454]/65
+}
+
+.btn {
+    @apply inline-block py-2 px-7 border border-transparent
+}
+
+.btn_main_outline {
+    @apply tracking-widest border-2 border-main text-main text-2xl transition-all duration-300 hover:bg-main hover:text-black
+}
+
+.nav_item {
+    @apply border border-transparent text-white text-3xl font-semibold transition-all duration-500 hover:text-main hover:border-b hover:border-b-main
+}
+
+.nav_item.active {
+    @apply text-main border-b-main
+}
+
+.row {
+    @apply flex flex-wrap mx-auto
+}
+
+.row > * {
+    @apply px-4
+}
+
+.page_title {
+    @apply text-9xl font-bold relative z-30 text-main transition duration-500 uppercase
+}
+
+.fine_element {
+    @apply text-[96px] text-white hover:text-main transition duration-500 leading-none uppercase font-semibold
+}
+
+.fine_element.active {
+    @apply text-main
+}
+
+.gallery_card {
+    @apply flex flex-col items-center justify-center
+}
