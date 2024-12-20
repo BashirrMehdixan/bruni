@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li @class(['nav_item', 'active' => Route::is('index')])>
-                        <a href="{{ route('works.index') }}">
+                        <a href="{{ route('store.index') }}">
                             Store
                         </a>
                     </li>

@@ -1,4 +1,7 @@
 @extends('layouts.design')
+@section('title')
+    WORK —
+@endsection
 @section('content')
     <section class="h-[calc(100vh-65px)] pb-8 pt-[150px]">
         <div class="container">

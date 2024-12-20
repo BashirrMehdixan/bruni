@@ -1,4 +1,7 @@
 @extends('layouts.design')
+@section('title')
+    POLAWORLD —
+@endsection
 @section('content')
     <section class="pb-16">
         <div class="overlay scroll"></div>

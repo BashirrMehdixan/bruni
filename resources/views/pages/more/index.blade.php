@@ -1,4 +1,7 @@
 @extends('layouts.design')
+@section('title')
+    MORE —
+@endsection
 @section('content')
     <section class="pt-[150px] pb-10">
         <div class="container">

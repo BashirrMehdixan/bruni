@@ -1,4 +1,7 @@
 @extends('layouts.design')
+@section('title')
+    FINE ART —
+@endsection
 @section('content')
     <section
         class="h-screen bg-center bg-no-repeat bg-cover bg-fine transition duration-500 pt-[150px] opacity-0 ease-out">
