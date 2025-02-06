@@ -3,34 +3,32 @@ if (document.querySelector('[data-fancybox]')) {
 }
 
 const fineElements = document.querySelectorAll('.fine_element');
-const customBg = document.querySelector('.bg-fine');
-if (customBg) {
-    customBg.style.backgroundImage = `url(${fineElements[0].dataset.bg}`;
-    customBg.classList.remove('opacity-0')
-}
+const bgFines = document.querySelectorAll('.bg_fine');
 if (fineElements.length) {
     fineElements[0].classList.add('active');
-    fineElements.forEach(element => {
-        element.addEventListener('mouseover', (e) => {
-            fineElements.forEach(a => a.classList.remove('active'));
-            e.target.classList.add('active');
 
-            customBg.classList.add('opacity-0');
-            setTimeout(() => {
-                customBg.style.backgroundImage = `url(${e.target.dataset.bg})`;
-                customBg.classList.remove('opacity-0');
-            }, 300);
+    fineElements.forEach(element => {
+        element.addEventListener('mouseover', ({target}) => {
+            fineElements.forEach(el => el.classList.toggle('active', el === target));
+            bgFines.forEach(bg => bg.classList.replace('opacity-100', 'opacity-0'));
+
+            const activeBg = document.querySelector(`#${target.dataset.art}`);
+            activeBg?.classList.replace('opacity-0', 'opacity-100');
         });
     });
 }
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 250) {
-        document.querySelector('.page_title').style.opacity = '0';
-        document.querySelector('.page_title').style.transform = "translateY(-50%)";
-        document.querySelector('.overlay.scroll').style.opacity = "0";
-    } else if (window.scrollY < 250) {
-        document.querySelector('.page_title').style.opacity = '1';
-        document.querySelector('.page_title').style.transform = "translateY(0)";
-        document.querySelector('.overlay.scroll').style.opacity = "0.65";
-    }
-})
+
+
+if (document.querySelector('.page_title')) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 250) {
+            document.querySelector('.page_title').style.opacity = '0';
+            document.querySelector('.page_title').style.transform = "translateY(-50%)";
+            document.querySelector('.overlay.scroll').style.opacity = "0";
+        } else if (window.scrollY < 250) {
+            document.querySelector('.page_title').style.opacity = '1';
+            document.querySelector('.page_title').style.transform = "translateY(0)";
+            document.querySelector('.overlay.scroll').style.opacity = "0.65";
+        }
+    })
+}

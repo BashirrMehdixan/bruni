@@ -13,7 +13,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-thumb]:bg-main">
+<body>
 @include('partials.navbar')
 <main>
     @yield('content')
