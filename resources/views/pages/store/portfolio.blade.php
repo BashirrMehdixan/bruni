@@ -12,14 +12,14 @@
             {{--                Your browser does not support the video tag.--}}
             {{--            </video>--}}
             <div class="w-full h-[840px] mb-8 border-b border-main/35">
-                <h4 class="title text-[#B0B0B0] text-5xl font-semibold uppercase">
+                <h4 class="title text-white/55 text-5xl font-semibold uppercase">
                     Video
                 </h4>
                 <iframe src="https://player.vimeo.com/video/117803357?wmode=opaque&api=1&autoplay=1"
                         class="size-full" allowfullscreen frameborder="0"></iframe>
             </div>
-            <div class="border-b border-main/35 mb-8 pb-12.">
-                <h4 class="title text-[#B0B0B0] text-5xl font-semibold uppercase mb-12">
+            <div class="border-b border-main/35 mb-8 pb-12">
+                <h4 class="title text-white/55 text-5xl font-semibold uppercase mb-12">
                     Content
                 </h4>
                 <div class="grid grid-cols-4 gap-12">
@@ -47,7 +47,6 @@
                                  class="size-full transition duration-500 grayscale hover:grayscale-0">
                         </a>
                     </div>
-
                     <div class="max-h-[400px]">
                         <a href="{{ asset('front/image/works/8528151-ZPBARTCV-6.jpg') }}" data-fancybox
                            class="block size-full">
@@ -146,6 +145,45 @@
                                  class="size-full transition duration-500 grayscale hover:grayscale-0">
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <div class="mt-16 mb-12">
+                <h4 class="title text-white/55 text-5xl font-semibold uppercase mb-16">
+                    TECHNICAL INFORMATIONS
+                </h4>
+                <p class="text-3xl text-white/55 mb-12">
+                    Limited Edition Portfolio [1] signed on 25 copie
+                </p>
+
+                <ul class="text-white/55 text-3xl mb-16 [&>li]:mb-3 [&>li]:relative [&>li]:before:absolute [&>li]:pl-4 [&>li]:before:w-3 [&>li]:before:h-1 [&>li]:before:bg-white/55 [&>li]:before:top-1/2 [&>li]:before:left-0 [&>li]:before:-translate-y-1/2">
+                    <li>
+                        Black box in padded synthetic leather with title embossed
+                    </li>
+                    <li>
+                        Black box in padded synthetic leather with title embossed
+                    </li>
+                    <li>
+                        Black box in padded synthetic leather with title embossed
+                    </li>
+                    <li>
+                        Black box in padded synthetic leather with title embossed
+                    </li>
+                    <li>
+                        Black box in padded synthetic leather with title embossed
+                    </li>
+                </ul>
+
+                <p class="text-3xl text-white/55 mb-5 font-semibold">
+                    When buying one portfolio you will be offered a 37x45 cm / 15x18 in. photograph to choose in the Exposure collection.
+                </p>
+
+                <p class="text-3xl text-white/55 mb-5 font-semibold">
+                    Price: 4200 €
+                </p>
+                <div class="text-3xl text-white/55 mb-5 font-semibold">
+                    Info & order: please contact Thomas Defays:
+                    <a href="mailto:thomas@brunobisang.com" class="text-main">thomas@brunobisang.com</a>
                 </div>
             </div>
         </div>

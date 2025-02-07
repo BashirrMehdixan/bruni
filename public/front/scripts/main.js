@@ -19,8 +19,8 @@ if (fineElements.length) {
 }
 
 
-if (document.querySelector('.page_title')) {
-    window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
+    if (document.querySelector('.page_title')) {
         if (window.scrollY > 250) {
             document.querySelector('.page_title').style.opacity = '0';
             document.querySelector('.page_title').style.transform = "translateY(-50%)";
@@ -30,5 +30,11 @@ if (document.querySelector('.page_title')) {
             document.querySelector('.page_title').style.transform = "translateY(0)";
             document.querySelector('.overlay.scroll').style.opacity = "0.65";
         }
-    })
-}
+    }
+    if (window.scrollY > 50) {
+        document.querySelector('header').style.backgroundColor = "rgba(0, 0, 0, .65)";
+    } else {
+        document.querySelector('header').style.backgroundColor = 'transparent';
+    }
+
+})
