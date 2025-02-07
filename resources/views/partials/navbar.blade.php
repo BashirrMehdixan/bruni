@@ -3,7 +3,7 @@
     <div class="container">
         <div class="flex justify-between lg:justify-start items-center gap-4 py-8 uppercase">
             <a href="{{ route('index') }}" class="relative text-lg lg:text-3xl text-main font-semibold z-10">
-                BRUNO BISANG PHOTOGRAPHY
+                Ellad Ismayil
             </a>
             <nav class="absolute lg:static top-[90%] w-full lg:w-auto left-0 lg:block origin-top transition duration-500 lg:scale-y-100" :class="navbar ? 'scale-y-100' : 'scale-y-0'">
                 <ul class="flex flex-col lg:flex-row items-center gap-3">
