@@ -9,7 +9,7 @@
         <div class="absolute size-full bg-cover bg-center top-0 left-0 z-0 transition duration-500 opacity-0 bg_fine"
              id="scarves" style="background-image: url('{{ asset("front/image/bg_scarves.jpg") }}')"></div>
         <div class="container relative">
-            <ul class="flex flex-col">
+            <ul class="flex flex-col gap-6">
                 <li>
                     <a href="{{ route('store.portfolio') }}"
                        class="fine_element" data-art="portfolio">
