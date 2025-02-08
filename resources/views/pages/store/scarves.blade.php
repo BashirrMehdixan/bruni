@@ -5,10 +5,10 @@
 
 @section('content')
     <section class="pt-[200px]">
-        <div class="container lg:!max-w-[905px]">
-            <div class="border-b border-main/35 mb-16">
+        <div class="container md:!max-w-[905px]">
+            <div class="border-b border-main/35 mb-8 md:mb-16">
                 <div class="text-center text-white/55 mb-16">
-                    <h4 class="title text-3xl font-semibold uppercase pb-5 px-8">
+                    <h4 class="title text-2xl md:text-3xl font-semibold uppercase pb-5 md:px-8">
                         SILK PRINTED SCARVES
                         UNIQUE PIECES
                     </h4>
