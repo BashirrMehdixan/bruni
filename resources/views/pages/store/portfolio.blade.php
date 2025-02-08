@@ -6,12 +6,11 @@
 @section('content')
     <section class="pt-[180px]">
         <div class="container">
-
             {{--            <video style="width: 100%; height: 560px" autoplay poster="{{ asset('front/image/bg_portfolio.jpg') }}">--}}
             {{--                <source src="https://player.vimeo.com/video/117803357?wmode=opaque&api=1&autoplay=1" type="video/mp4">--}}
             {{--                Your browser does not support the video tag.--}}
             {{--            </video>--}}
-            <div class="w-full h-[840px] mb-8 border-b border-main/35">
+            <div class="w-full h-[540px] lg:h-[840px] mb-8 border-b border-main/35">
                 <h4 class="title text-white/55 text-5xl font-semibold uppercase">
                     Video
                 </h4>
@@ -22,7 +21,7 @@
                 <h4 class="title text-white/55 text-5xl font-semibold uppercase mb-12">
                     Content
                 </h4>
-                <div class="grid grid-cols-4 gap-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-12">
                     <div class="max-h-[400px]">
                         <a href="{{ asset('front/image/works/work_1.jpg') }}" data-fancybox class="block size-full">
                             <img src="{{ asset('front/image/works/work_1.jpg') }}" alt="Work 1"
@@ -149,10 +148,10 @@
             </div>
 
             <div class="mt-16 mb-12">
-                <h4 class="title text-white/55 text-5xl font-semibold uppercase mb-16">
+                <h4 class="title text-white/55 text-3xl md:text-5xl font-semibold uppercase mb-16">
                     TECHNICAL INFORMATIONS
                 </h4>
-                <p class="text-3xl text-white/55 mb-12">
+                <p class="text-2xl md:text-3xl text-white/55 mb-12">
                     Limited Edition Portfolio [1] signed on 25 copie
                 </p>
 
@@ -174,14 +173,14 @@
                     </li>
                 </ul>
 
-                <p class="text-3xl text-white/55 mb-5 font-semibold">
+                <p class="text-2xl md:text-3xl text-white/55 mb-5 font-semibold">
                     When buying one portfolio you will be offered a 37x45 cm / 15x18 in. photograph to choose in the Exposure collection.
                 </p>
 
-                <p class="text-3xl text-white/55 mb-5 font-semibold">
+                <p class="text-2xl md:text-3xl text-white/55 mb-5 font-semibold">
                     Price: 4200 €
                 </p>
-                <div class="text-3xl text-white/55 mb-5 font-semibold">
+                <div class="text-2xl md:text-3xl text-white/55 mb-5 font-semibold">
                     Info & order: please contact Thomas Defays:
                     <a href="mailto:thomas@brunobisang.com" class="text-main">thomas@brunobisang.com</a>
                 </div>

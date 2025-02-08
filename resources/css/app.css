@@ -43,11 +43,11 @@
 }
 
 .page_title {
-    @apply text-9xl font-bold relative z-30 text-main transition duration-500 uppercase
+    @apply text-5xl md:text-9xl font-bold relative z-30 text-main transition duration-500 uppercase
 }
 
 .fine_element {
-    @apply text-[96px] text-white hover:text-main transition duration-500 leading-none uppercase font-semibold
+    @apply text-5xl md:text-[96px] text-white hover:text-main transition duration-500 leading-none uppercase font-semibold
 }
 
 .fine_element.active {

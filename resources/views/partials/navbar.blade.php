@@ -1,8 +1,8 @@
-<header @class(['fixed w-full z-20 block', 'hidden' => Route::is('index')]) x-data="{ navbar: false }">
-    <div class="overlay" :class="navbar ? '' : 'hidden'"></div>
+<header @class(['fixed w-full z-40 block', 'hidden' => Route::is('index')]) x-data="{ navbar: false }">
+    <div class="overlay !bg-black/65 !z-0" :class="navbar ? '' : 'hidden'"></div>
     <div class="container">
         <div class="flex justify-between lg:justify-start items-center gap-4 py-8 uppercase">
-            <a href="{{ route('index') }}" class="relative text-lg lg:text-3xl text-main font-semibold z-10">
+            <a href="{{ route('index') }}" class="relative text-2xl md:text-3xl text-main font-semibold z-10">
                 Ellada Ismayil
             </a>
             <nav class="absolute lg:static top-[90%] w-full lg:w-auto left-0 lg:block origin-top transition duration-500 lg:scale-y-100" :class="navbar ? 'scale-y-100' : 'scale-y-0'">
