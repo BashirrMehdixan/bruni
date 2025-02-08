@@ -7,29 +7,34 @@
             </a>
             <nav class="absolute lg:static top-[90%] w-full lg:w-auto left-0 lg:block origin-top transition duration-500 lg:scale-y-100" :class="navbar ? 'scale-y-100' : 'scale-y-0'">
                 <ul class="flex flex-col lg:flex-row items-center gap-3">
-                    <li @class(['nav_item', 'active' => Route::is('works.index')])>
-                        <a href="{{ route('works.index') }}">
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('works.index') }}" @class(['active' => Route::is('works.index')])>
                             Work
                         </a>
                     </li>
-                    <li @class(['nav_item', 'active' => Route::is('fine.index')])>
-                        <a href="{{ route('fine.index') }}">
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('fine.index') }}" @class(['active' => Route::is('fine.index')])>
                             Fine Art
                         </a>
                     </li>
-                    <li @class(['nav_item', 'active' => Route::is('index')])>
-                        <a href="{{ route('more.index') }}">
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('more.index') }}" @class(['active' => Route::is('more.index')])>
                             More
                         </a>
                     </li>
-                    <li @class(['nav_item', 'active' => Route::is('index')])>
-                        <a href="{{ route('store.index') }}">
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('store.index') }}" @class(['active' => Route::is('store.index')])>
                             Store
                         </a>
                     </li>
-                    <li @class(['nav_item', 'active' => Route::is('index')])>
-                        <a href="{{ route('works.index') }}">
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('about') }}" @class(['active' => Route::is('about')])>
                             About
+                        </a>
+                    </li>
+                    <li class="nav_item has-[.active]:text-main has-[.active]:border-b has-[.active]:border-b-main">
+                        <a href="{{ route('contact') }}" @class(['active' => Route::is('contact')])>
+                            Contact
                         </a>
                     </li>
                 </ul>
