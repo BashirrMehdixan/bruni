@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ArtsResource\Pages;
+namespace App\Filament\Resources\BranchResource\Pages;
 
-use App\Filament\Resources\ArtsResource;
+use App\Filament\Resources\BranchResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-class ListArts extends ListRecords
+class ListBranches extends ListRecords
 {
-    protected static string $resource = ArtsResource::class;
+    protected static string $resource = BranchResource::class;
 
     protected function getHeaderActions(): array
     {

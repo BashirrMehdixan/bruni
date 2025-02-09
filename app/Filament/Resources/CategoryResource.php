@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ArtsResource\Pages;
-use App\Filament\Resources\ArtsResource\RelationManagers;
-use App\Models\Art;
+use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Models\Category;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -26,11 +26,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class ArtsResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Art::class;
+    protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'fas-palette';
+    protected static ?string $navigationIcon = 'fas-layer-group';
 
     public static function form(Form $form): Form
     {
@@ -42,13 +42,6 @@ class ArtsResource extends Resource
                         ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
                         ->required(),
                     TextInput::make('slug')->unique(ignoreRecord: true)->readOnly()->required(),
-                    Select::make('category_id')
-                        ->label('Category')
-                        ->relationship('category', 'title')
-                        ->preload()
-                        ->native()
-                        ->searchable()
-                        ->required(),
                     RichEditor::make('description')->columnSpan('full')
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
@@ -64,12 +57,11 @@ class ArtsResource extends Resource
             ->columns([
                 ImageColumn::make('thumbnail')->label('Image'),
                 TextColumn::make('title')->searchable()->sortable()->searchable(),
-                TextColumn::make('category.title')->label('Category')->sortable()->searchable(),
                 CheckboxColumn::make('status')->sortable(),
                 TextColumn::make('created_at')->dateTime()->label('Time')->sortable(),
             ])
             ->filters([
-
+                //
             ])
             ->actions([
                 EditAction::make(),
@@ -92,9 +84,9 @@ class ArtsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListArts::route('/'),
-            'create' => Pages\CreateArts::route('/create'),
-            'edit' => Pages\EditArts::route('/{record}/edit'),
+            'index' => Pages\ListCategories::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ArtsResource\Pages;
+namespace App\Filament\Resources\ContactResource\Pages;
 
-use App\Filament\Resources\ArtsResource;
+use App\Filament\Resources\ContactResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditArts extends EditRecord
+class EditContact extends EditRecord
 {
-    protected static string $resource = ArtsResource::class;
+    protected static string $resource = ContactResource::class;
 
     protected function getHeaderActions(): array
     {

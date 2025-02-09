@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\ArtsResource\Pages;
+namespace App\Filament\Resources\BranchResource\Pages;
 
-use App\Filament\Resources\ArtsResource;
+use App\Filament\Resources\BranchResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditArts extends EditRecord
+class EditBranch extends EditRecord
 {
-    protected static string $resource = ArtsResource::class;
+    protected static string $resource = BranchResource::class;
 
     protected function getHeaderActions(): array
     {

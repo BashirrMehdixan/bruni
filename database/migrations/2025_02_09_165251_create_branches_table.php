@@ -10,15 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('art', function (Blueprint $table) {
+        Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
-            $table->foreignId('category_id')->constrained();
-            $table->string('thumbnail');
-            $table->longText('description')->nullable();
-            $table->unsignedInteger('order')->nullable();
-            $table->boolean('status')->default(true);
+            $table->string('city')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('art');
+        Schema::dropIfExists('branches');
     }
 };
