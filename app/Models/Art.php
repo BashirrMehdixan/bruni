@@ -11,6 +11,9 @@ class Art extends Model
         'title',
         'slug',
         'category_id',
+        'price',
+        'store',
+        'work',
         'thumbnail',
         'description',
         'status'

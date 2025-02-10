@@ -17,6 +17,8 @@ class ContactResource extends Resource
 {
     protected static ?string $model = Contact::class;
 
+    protected static ?string $pluralLabel = 'Contact';
+
     protected static ?string $navigationIcon = 'fas-address-book';
 
     public static function form(Form $form): Form

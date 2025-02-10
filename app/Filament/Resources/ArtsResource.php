@@ -29,7 +29,7 @@ use Illuminate\Support\Str;
 class ArtsResource extends Resource
 {
     protected static ?string $model = Art::class;
-
+    protected static ?string $pluralLabel = 'Arts';
     protected static ?string $navigationIcon = 'fas-palette';
 
     public static function form(Form $form): Form
@@ -49,12 +49,15 @@ class ArtsResource extends Resource
                         ->native()
                         ->searchable()
                         ->required(),
+                    TextInput::make('price')->integer(),
                     RichEditor::make('description')->columnSpan('full')
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
-                    FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/arts'),
-                    ToggleButtons::make('status')->boolean()->grouped()->default(true)
-                ])->columnSpan(1)
+                    FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/arts')->columnSpan('full'),
+                    ToggleButtons::make('store')->label('Show in Work')->boolean()->grouped()->default(true),
+                    ToggleButtons::make('work')->label('Show in Work')->boolean()->grouped()->default(true),
+                    ToggleButtons::make('status')->boolean()->grouped()->default(true),
+                ])->columnSpan(1)->columns(2)
             ])->columns(3);
     }
 
@@ -65,6 +68,8 @@ class ArtsResource extends Resource
                 ImageColumn::make('thumbnail')->label('Image'),
                 TextColumn::make('title')->searchable()->sortable()->searchable(),
                 TextColumn::make('category.title')->label('Category')->sortable()->searchable(),
+                CheckboxColumn::make('store')->sortable(),
+                CheckboxColumn::make('work')->sortable(),
                 CheckboxColumn::make('status')->sortable(),
                 TextColumn::make('created_at')->dateTime()->label('Time')->sortable(),
             ])

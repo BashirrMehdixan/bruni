@@ -13,7 +13,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="scrollbar">
 @include('partials.navbar')
 <main>
     @yield('content')

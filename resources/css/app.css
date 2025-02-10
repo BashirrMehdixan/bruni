@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        background: rgba(0, 0, 8, .3);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: #fa5c00;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #fa5c00;
+    }
+}
+
 @layer base {
     body {
         @apply bg-black font-['Roboto_Condensed']
