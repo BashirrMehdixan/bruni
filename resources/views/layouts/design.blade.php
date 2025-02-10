@@ -21,7 +21,6 @@
 @if( !Route::is('index') && !Route::is('fine.index') && !Route::is('store.index'))
     @include('partials.footer')
 @endif
-{{--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>--}}
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script src="{{ asset('front/scripts/main.js') }}"></script>

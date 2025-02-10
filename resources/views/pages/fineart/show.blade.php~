@@ -12,7 +12,7 @@
                 </h4>
             </div>
         </div>
-        <div class="grid grid-cols-1 @if(count($arts) >= 2) md:grid-cols-2 @endif">
+        <div class="grid grid-cols-1 @if($arts) md:grid-cols-2 @endif">
             @foreach($arts as $art)
                 <x-art-component :art="$art"/>
             @endforeach

@@ -7,12 +7,13 @@
         <div class="container max-w-[905px]">
             <ul class="text-white/55 text-sm uppercase space-y-2.5 mb-8 border-t border-b border-main/55 py-8">
                 <li>Bruno Bisang</li>
-                <li>Zollstrasse 37</li>
-                <li>ZÜRICH 8005 - SWITZERLAND</li>
-                <li>+41 79 25 72 062</li>
-                <li class="text-main">
-                    <a href="mailto:bruno@brunobisang.com">bruno@brunobisang.com</a>
-                </li>
+                @isset($contact)
+                    <li class="last:text-main">{{ $contact->address }}</li>
+                    <li class="last:text-main">{{ $contact->phone }}</li>
+                    <li class="last:text-main">
+                        <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a>
+                    </li>
+                @endisset
             </ul>
             <div class="text-white/65 grid gird-cols-1 md:grid-cols-2 my-8 border-b border-main/55">
                 <div class="pb-5">
@@ -267,26 +268,41 @@
                 </div>
             </div>
 
-            <div class="mb-8">
-                <h3
-                    class="text-sm text-white/65 pl-5 relative before:absolute before:w-3 before:h-0.5 before:bg-white/55 before:left-0 before:top-1/2">
-                    Social networks
-                </h3>
-                <ul class="text-main text-5xl font-semibold space-y-2 mt-5 capitalize">
-                    <li>
-                        <a href="https://facebook.com">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="https://instagram.com">Instagram</a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com">youtube</a>
-                    </li>
-                    <li>
-                        <a href="https://vimeo.com">vimeo</a>
-                    </li>
-                </ul>
-            </div>
+            @isset($contact)
+                <div class="mb-8">
+                    <h3
+                        class="text-sm text-white/65 pl-5 relative before:absolute before:w-3 before:h-0.5 before:bg-white/55 before:left-0 before:top-1/2">
+                        Social networks
+                    </h3>
+                    <ul class="text-main text-5xl font-semibold space-y-2 mt-5 capitalize">
+                        @if($contact->instagram)
+                            <li class="transition duration-500 hover:text-white/55">
+                                <a href="{{ $contact->instagram }}">Instagram</a>
+                            </li>
+                        @endif
+                        @if($contact->facebook)
+                            <li class="transition duration-500 hover:text-white/55">
+                                <a href="{{ $contact->facebook }}">Facebook</a>
+                            </li>
+                        @endif
+                        @if($contact->youtube)
+                            <li class="transition duration-500 hover:text-white/55">
+                                <a href="{{ $contact->youtube }}">youtube</a>
+                            </li>
+                        @endif
+                        @if($contact->twitter)
+                            <li class="transition duration-500 hover:text-white/55">
+                                <a href="{{ $contact->twitter }}">twitter</a>
+                            </li>
+                        @endif
+                        @if($contact->tiktok)
+                            <li class="transition duration-500 hover:text-white/55">
+                                <a href="{{ $contact->tiktok }}">tiktok</a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+            @endisset
         </div>
     </section>
 @endsection

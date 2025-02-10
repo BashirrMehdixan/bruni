@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Art;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -18,6 +19,7 @@ class StoreController extends Controller
 
     public function scarves()
     {
-        return view('pages.store.scarves');
+        $arts = Art::orderBy('title', 'desc')->where('status', true)->get();
+        return view('pages.store.scarves', compact('arts'));
     }
 }

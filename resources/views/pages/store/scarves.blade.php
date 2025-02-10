@@ -19,11 +19,13 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1">
-                <x-product-component image="{{ asset('front/image/works/9080479-HNMYSPLO-6.jpg') }}"/>
-                <x-product-component image="{{ asset('front/image/works/9080443-WAQBUIJR-6.jpg') }}"/>
-                <x-product-component image="{{ asset('front/image/works/9246677-LQJEVUFV-6.jpg') }}"/>
-            </div>
+            @isset($arts)
+                <div class="grid grid-cols-1">
+                    @foreach($arts as $art)
+                        <x-product-component :art="$art"/>
+                    @endforeach
+                </div>
+            @endisset
         </div>
     </section>
 @endsection

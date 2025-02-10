@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $about = About::first();
+        return view('pages.index', compact('about'));
     }
 }

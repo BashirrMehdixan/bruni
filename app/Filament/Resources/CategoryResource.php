@@ -45,7 +45,7 @@ class CategoryResource extends Resource
                     RichEditor::make('description')->columnSpan('full')
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
-                    FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/arts'),
+                    FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/category'),
                     ToggleButtons::make('status')->boolean()->grouped()->default(true)
                 ])->columnSpan(1)
             ])->columns(3);
