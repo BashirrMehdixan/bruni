@@ -1,6 +1,6 @@
 @props(['image'])
 <div class="grid grid-cols-1 md:grid-cols-3 place-items-center mb-16 text-white/55">
-    <div class="w-[270px] h-[250px] md:w-[310px] md:h-[310px] mb-5 md:mb-0">
+    <div class="w-[270px] max-h-[310px] mb-5 md:mb-0">
         <img src="{{ $image }}" class="size-full object-cover" alt="">
     </div>
     <div class="md:ml-5">
