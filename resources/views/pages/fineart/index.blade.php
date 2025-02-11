@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    FINE ART —
+@section('seo')
+    <title>FINE ART — {{ config('app.name') }}</title>
 @endsection
 @section('content')
     <section class="h-screen relative pt-[150px]">

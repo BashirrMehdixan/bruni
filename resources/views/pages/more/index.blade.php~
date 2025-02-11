@@ -72,7 +72,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.press', 'press') }}" class="block">
+                                    <a href="{{ route('more.show', 'fineart') }}" class="block">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>

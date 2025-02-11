@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    Portfolio -
+@section('seo')
+    <title>PORTFOLIO — {{ config('app.name') }}</title>
 @endsection
 
 @section('content')

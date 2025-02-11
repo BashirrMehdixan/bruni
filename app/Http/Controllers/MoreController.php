@@ -15,4 +15,9 @@ class MoreController extends Controller
     {
         return view('pages.more.show');
     }
+
+    public function press($slug)
+    {
+        return view('pages.more.press');
+    }
 }

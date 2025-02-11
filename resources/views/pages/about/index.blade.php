@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    ABOUT -
+@section('seo')
+    <title>ABOUT — {{ config('app.name') }}</title>
 @endsection
 @section('content')
     @isset($about)

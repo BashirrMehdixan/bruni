@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    SCARVES -
+@section('seo')
+    <title>Scarves — {{ config('app.name') }}</title>
 @endsection
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    {{ $category->title }} —
+@section('seo')
+    <title> {{ $category->title }} — {{ config('app.name') }}</title>
 @endsection
 @section('content')
     <section class="pb-16">

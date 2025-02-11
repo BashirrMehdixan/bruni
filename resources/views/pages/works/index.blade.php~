@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('seo')
-    <title>WORKS — {{ config('app.name') }}</title>
+@section('title')
+    WORK —
 @endsection
 @section('content')
     <section class="pb-8 pt-[150px]">

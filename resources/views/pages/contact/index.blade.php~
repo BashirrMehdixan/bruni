@@ -1,6 +1,6 @@
 @extends('layouts/design')
-@section('seo')
-    <title>CONTACT — {{ config('app.name') }}</title>
+@section('title')
+    CONTACT -
 @endsection
 @section('content')
     <section class="pt-[200px]">

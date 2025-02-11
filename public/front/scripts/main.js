@@ -36,5 +36,4 @@ window.addEventListener('scroll', () => {
     } else {
         document.querySelector('header').style.backgroundColor = 'transparent';
     }
-
 })

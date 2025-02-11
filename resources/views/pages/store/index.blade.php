@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    STORE —
+@section('seo')
+    <title>STORE — {{ config('app.name') }}</title>
 @endsection
 @section('content')
     <section class="relative h-screen pt-[150px]">

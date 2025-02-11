@@ -1,6 +1,6 @@
 @extends('layouts.design')
-@section('title')
-    fineart —
+@section('seo')
+    <title>MORE — {{ config('app.name') }}</title>
 @endsection
 @section('content')
     <section class="pt-[150px] pb-10">
