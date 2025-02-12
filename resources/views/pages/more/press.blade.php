@@ -6,7 +6,7 @@
     <section class="pt-[250px] mb-16">
         <div class="container !max-w-[905px]">
             <h4 class="title text-center text-white/55 text-4xl font-semibold uppercase mb-16 px-8">
-                exhibitions
+                Press Gallery
             </h4>
             <div class="grid md:grid-cols-2 lg:grid-cols-9 place-items-center gap-4">
                 <a href="{{ asset('front/image/works/9246677-LQJEVUFV-6.jpg') }}" class="block w-auto md:w-[310px] md:h-[310px] lg:w-auto lg:h-auto" data-fancybox="gallery">

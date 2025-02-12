@@ -11,13 +11,13 @@
         <div class="container relative">
             <ul class="flex flex-col gap-6">
                 <li>
-                    <a href="{{ route('store.portfolio') }}"
+                    <a href="{{ route('front.store.portfolio') }}"
                        class="fine_element" data-art="portfolio">
                         Portfolio
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('store.scarves') }}"
+                    <a href="{{ route('front.store.scarves') }}"
                        class="fine_element" data-art="scarves">
                         Scarves
                     </a>

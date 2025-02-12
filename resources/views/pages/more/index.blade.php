@@ -14,7 +14,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>
@@ -25,7 +25,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>
@@ -43,7 +43,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>
@@ -54,7 +54,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.show', 'fineart') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>
@@ -72,7 +72,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.press', 'press') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.press', 'press') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>
@@ -83,7 +83,7 @@
                         <li>
                             <div class="gallery_card">
                                 <div class="thumbnail">
-                                    <a href="{{ route('more.show', 'press') }}" class="max-w-[90px] h-[90px] block mx-auto">
+                                    <a href="{{ route('front.more.show', 'press') }}" class="max-w-[90px] h-[90px] block mx-auto">
                                         <img src="{{ asset('front/image/gallery/gallery.jpg') }}" class="size-full"
                                              alt="">
                                     </a>

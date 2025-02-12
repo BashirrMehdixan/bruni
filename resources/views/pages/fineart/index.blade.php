@@ -17,7 +17,7 @@
                 @isset($categories)
                     @foreach($categories as $category)
                         <li>
-                            <a href="{{ route('fine.show', $category->slug) }}"
+                            <a href="{{ route('front.fine.show', $category->slug) }}"
                                class="fine_element" data-art="{{ $category->slug }}">
                                 {{ $category->title }}
                             </a>

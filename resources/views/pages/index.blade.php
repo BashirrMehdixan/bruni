@@ -19,6 +19,6 @@
             <br>
             FINE ARTIST
         </h1>
-        <a href="{{ route('works.index') }}" class="btn btn_main_outline hover:text-white z-10">Enter</a>
+        <a href="{{ route('front.works.index') }}" class="btn btn_main_outline hover:text-white z-10">Enter</a>
     </section>
 @endsection
