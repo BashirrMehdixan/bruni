@@ -1,4 +1,4 @@
-<header @class(['fixed w-full z-40 block', 'hidden' => Route::is('index')]) x-data="{ navbar: false }">
+<header @class(['fixed w-full z-40 block', 'hidden' => Route::is('front.index')]) x-data="{ navbar: false }">
     <div class="overlay !bg-black/65 !z-0" :class="navbar ? '' : 'hidden'"></div>
     <div class="container">
         <div class="flex justify-between lg:justify-start items-center gap-4 py-8 uppercase">

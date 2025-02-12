@@ -16,7 +16,7 @@
 <main>
     @yield('content')
 </main>
-@if( !Route::is('index') && !Route::is('fine.index') && !Route::is('store.index'))
+@if( !Route::is('front.index') && !Route::is('front.fine.index') && !Route::is('front.store.index'))
     @include('partials.footer')
 @endif
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
