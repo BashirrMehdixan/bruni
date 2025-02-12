@@ -16,6 +16,8 @@
         @endisset
         <h1 class="text-4xl lg:text-[120px] leading-none text-main font-bold text-center uppercase z-10">
             Ellada Ismayil
+            <br>
+            FINE ARTIST
         </h1>
         <a href="{{ route('works.index') }}" class="btn btn_main_outline hover:text-white z-10">Enter</a>
     </section>
