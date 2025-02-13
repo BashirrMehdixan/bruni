@@ -9,7 +9,7 @@ class FineArtController extends Controller
 {
     public function index()
     {
-        $categories = Category::orderBy('title', 'desc')->where('status', 1)->get();
+        $categories = Category::orderBy('order', 'asc')->where('status', 1)->get();
         return view('pages.fineart.index', compact('categories'));
     }
 

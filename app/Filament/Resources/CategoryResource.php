@@ -59,7 +59,7 @@ class CategoryResource extends Resource
                 TextColumn::make('title')->searchable()->sortable()->searchable(),
                 CheckboxColumn::make('status')->sortable(),
                 TextColumn::make('created_at')->dateTime()->label('Time')->sortable(),
-            ])
+            ])->reorderable('order')
             ->filters([
                 //
             ])
