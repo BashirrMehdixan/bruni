@@ -39,18 +39,17 @@ class ArtsResource extends Resource
             ->schema([
                 Section::make()->schema([
                     TextInput::make('title')
-                        ->live(onBlur: true)
-                        ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
                         ->required(),
-                    TextInput::make('slug')->unique(ignoreRecord: true)->readOnly()->required(),
+                    TextInput::make('slug')->hidden()->unique(ignoreRecord: true)->readOnly()->required(),
+                    TextInput::make('price')->integer(),
                     Select::make('category_id')
                         ->label('Category')
                         ->relationship('category', 'title')
                         ->preload()
                         ->native()
                         ->searchable()
+                        ->columnSpan('full')
                         ->required(),
-                    TextInput::make('price')->integer(),
                     RichEditor::make('description')->columnSpan('full')
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
@@ -67,7 +66,7 @@ class ArtsResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('thumbnail')->label('Image'),
-                TextColumn::make('title')->searchable()->sortable()->searchable(),
+                TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('category.title')->label('Category')->sortable()->searchable(),
                 CheckboxColumn::make('store')->sortable(),
                 CheckboxColumn::make('work')->sortable(),

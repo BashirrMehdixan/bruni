@@ -37,11 +37,8 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 Section::make()->schema([
-                    TextInput::make('title')
-                        ->live(onBlur: true)
-                        ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
-                        ->required(),
-                    TextInput::make('slug')->unique(ignoreRecord: true)->readOnly()->required(),
+                    TextInput::make('title')->required(),
+                    TextInput::make('slug')->hidden()->required(),
                     RichEditor::make('description')->columnSpan('full')
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
