@@ -39,13 +39,14 @@ class AboutResource extends Resource
                     Select::make('video_type')->options([
                         'video' => 'Video',
                         'url' => 'Url'
-                    ])->hidden()
+                    ])
                         ->live()
                         ->afterStateUpdated(function (callable $set) {
                             $set('video', null);
                             $set('url', null);
                         })
-                        ->native(false),
+                        ->native(false)
+                        ->default('video'),
                     TextInput::make('url')
                         ->label('URL')
                         ->hidden(fn(Get $get) => $get('video_type') !== 'url')
@@ -53,8 +54,8 @@ class AboutResource extends Resource
                         ->required(fn(Get $get) => $get('video_type') === 'url'),
                     FileUpload::make('video')
                         ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mpeg', 'video/quicktime'])
-//                        ->hidden(fn(Get $get) => $get('video_type') !== 'video')
-//                        ->required(fn(Get $get) => $get('video_type') === 'video')
+                        ->hidden(fn(Get $get) => $get('video_type') !== 'video')
+                        ->required(fn(Get $get) => $get('video_type') === 'video')
                         ->directory('uploads/videos/about'),
                 ])->columnSpan(2),
                 Section::make()->schema([

@@ -79,7 +79,7 @@ class ArtsResource extends Resource
             ->actions([
                 EditAction::make(),
                 DeleteAction::make(),
-//                ReplicateAction::make()->label('Duplicate'),
+                ReplicateAction::make()->label('Duplicate'),
             ])
             ->bulkActions([
                 BulkActionGroup::make([
