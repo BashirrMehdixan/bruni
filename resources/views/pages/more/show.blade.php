@@ -2,20 +2,48 @@
 @section('seo')
     <title>MORE — {{ config('app.name') }}</title>
 @endsection
-@section('content')
-    <section class="pt-[150px] pb-10">
-        <div class="container text-center">
-            <div class="w-full md:w-1/2  mx-auto">
-                <h3 class="text-[#a8a8a8] pb-10">
-                    "NUDE" Oslo, with GALLERI FINEART (NORWAY) - 17 Oct. > 3 Nov. 2019 > VISIT
-                    <a href="#" class="text-sm text-main">
-                        www.fineart.no
-                    </a>
-                </h3>
-                <div class="thumbnail">
-                    <img src="{{ asset('front/image/gallery/gallery_big.jpg') }}" class="size-full" alt="">
+@if($collection->title !== 'Press')
+    @section('content')
+        <section class="pt-[150px] pb-10">
+            <div class="container text-center">
+                <div class="w-full md:w-1/2  mx-auto">
+                    <h3 class="text-[#a8a8a8] pb-10">
+                        {{ $more->title }}
+                    </h3>
+                    @if($more->description)
+                        <div class="mb-5">
+                            {!! $more->description !!}
+                        </div>
+                    @endif
+                    @foreach($more->thumbnail as $thumbnail)
+                        <div class="thumbnail mb-3">
+                            <img src="{{ asset('storage/'.$thumbnail) }}" class="size-full" alt="">
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-    </section>
-@endsection
+        </section>
+    @endsection
+@else
+    @section('seo')
+        <title>PRESS — {{ config('app.name') }}</title>
+    @endsection
+    @section('content')
+        <section class="pt-[250px] mb-16">
+            <div class="container !max-w-[905px]">
+                <h4 class="title text-center text-white/55 text-4xl font-semibold uppercase mb-16 px-8">
+                    Press Gallery
+                </h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-9 place-items-center gap-4">
+                    @foreach($more->thumbnail as $thumbnail)
+                        <a href="{{ asset('storage/'.$thumbnail) }}"
+                           class="block w-auto md:w-[310px] md:h-[310px] lg:w-auto lg:h-auto" data-fancybox="gallery">
+                            <img src="{{ asset('storage/'.$thumbnail) }}"
+                                 class="size-full object-cover" title="{{ $more->title }}" alt="{{ $more->title }}">
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endsection
+@endif

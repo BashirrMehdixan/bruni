@@ -4,23 +4,24 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Press extends Model
+class Collection extends Model
 {
     use Sluggable;
 
     protected $fillable = [
         'title',
         'slug',
-        'thumbnail',
         'description',
         'thumbnail',
-        'status'
+        'status',
     ];
 
-    protected $casts = [
-        'thumbnail' => 'array'
-    ];
+    public function arts(): HasMany
+    {
+        return $this->hasMany(More::class);
+    }
 
     public function sluggable(): array
     {

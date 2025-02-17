@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class More extends Model
 {
@@ -12,15 +13,21 @@ class More extends Model
     protected $fillable = [
         'title',
         'slug',
+        'collection_id',
         'thumbnail',
+        'cover_photo',
         'description',
-        'thumbnail',
-        'status'
+        'status',
     ];
 
     protected $casts = [
         'thumbnail' => 'array'
     ];
+
+    public function collection(): BelongsTo
+    {
+        return $this->belongsTo(Collection::class);
+    }
 
     public function sluggable(): array
     {

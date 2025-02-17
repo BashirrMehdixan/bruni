@@ -6,19 +6,21 @@
     <section class="pt-[150px] pb-10">
         <div class="container">
             <div class="row">
-                @isset($mores)
-                    <div class="w-full md:w-1/2 lg:w-1/3 mb-16">
-                        <h4 class="title text-center text-white/55 text-3xl font-semibold uppercase pb-9 mb-16 px-8 border-b border-[#380000]">
-                            exhibitions
-                        </h4>
-                        <ul class="space-y-10">
-                            @foreach($mores as $more)
-                                <li>
-                                    <x-gallery-component :item="$more"/>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+                @isset($collections)
+                    @foreach($collections as $collection)
+                        <div class="w-full md:w-1/2 lg:w-1/3 mb-16">
+                            <h4 class="title text-center text-white/55 text-3xl font-semibold uppercase pb-9 mb-16 px-8 border-b border-[#380000]">
+                                {{ $collection->title }}
+                            </h4>
+                            <ul class="space-y-10">
+                                @foreach($mores->where('collection_id', $collection->id) as $more)
+                                    <li>
+                                        <x-gallery-component :item="$more"/>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endforeach
                 @endisset
                 @isset($books)
                     <div class="w-full md:w-1/2 lg:w-1/3 mb-16">

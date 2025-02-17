@@ -5,10 +5,17 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BranchResource\Pages;
 use App\Filament\Resources\BranchResource\RelationManagers;
 use App\Models\Branch;
-use Filament\Forms;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\CheckboxColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -23,7 +30,15 @@ class BranchResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Section::make()->schema([
+                    TextInput::make('title'),
+                    TextInput::make('city'),
+                    TextInput::make('address'),
+                    TextInput::make('phone'),
+                    TextInput::make('email'),
+                    TextInput::make('website'),
+                    ToggleButtons::make('status')->boolean()->grouped()->default(true)
+                ])->columns(2)
             ]);
     }
 
@@ -31,17 +46,27 @@ class BranchResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')->searchable()->sortable(),
+                Select::make('type')->options([
+                    'galleries' => 'Galleries',
+                    'agents' => 'Agents'
+                ])->native(false)->preload()->searchable(),
+                TextColumn::make('city')->searchable()->sortable(),
+                TextColumn::make('address')->searchable()->sortable(),
+                TextColumn::make('phone')->searchable()->sortable(),
+                TextColumn::make('email')->searchable()->sortable(),
+                TextColumn::make('website')->searchable()->sortable(),
+                CheckboxColumn::make('status')->sortable()
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }

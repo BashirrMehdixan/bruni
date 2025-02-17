@@ -13,7 +13,8 @@ return new class extends Migration {
         Schema::create('mores', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
+            $table->string('slug');
+            $table->foreignId('collection_id')->constrained();
             $table->longText('description')->nullable();
             $table->json('thumbnail')->nullable();
             $table->boolean('status')->default(true);

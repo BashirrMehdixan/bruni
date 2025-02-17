@@ -8,6 +8,7 @@ use App\Models\More;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
@@ -15,7 +16,6 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ReplicateAction;
 use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -27,8 +27,6 @@ class MoreResource extends Resource
 {
     protected static ?string $model = More::class;
 
-    protected static ?string $pluralModelLabel = 'More';
-
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -37,14 +35,18 @@ class MoreResource extends Resource
             ->schema([
                 Section::make()->schema([
                     TextInput::make('title')->required(),
-                    RichEditor::make('description'),
-                ])->columnSpan(2),
+                    Select::make('collection_id')
+                        ->relationship('collection', 'title')
+                        ->label('Collection')
+                        ->native(false)
+                        ->preload()
+                        ->searchable()
+                        ->required(),
+                    RichEditor::make('description')->columnSpan('full')
+                ])->columnSpan(2)->columnSpan(2),
                 Section::make()->schema([
-                    FileUpload::make('thumbnail')
-                        ->image()
-                        ->imageEditor()
-                        ->directory('uploads/images/more')
-                        ->multiple(),
+                    FileUpload::make('cover_photo')->image()->imageEditor()->directory('uploads/images/mores/cover'),
+                    FileUpload::make('thumbnail')->image()->multiple()->reorderable()->panelLayout('grid')->imageEditor()->directory('uploads/images/mores'),
                     ToggleButtons::make('status')->boolean()->grouped()->default(true)
                 ])->columnSpan(1)
             ])->columns(3);
@@ -54,18 +56,18 @@ class MoreResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail')->stacked()->limit(3),
-                TextColumn::make('title'),
-                TextColumn::make('slug'),
-                TextColumn::make('created_at')->dateTime(),
-                CheckboxColumn::make('status')
+                ImageColumn::make('thumbnail')->stacked()->limit(1),
+                TextColumn::make('title')->searchable()->sortable(),
+                TextColumn::make('collection.title')->label('Collection')->sortable()->searchable(),
+                TextColumn::make('slug')->searchable()->sortable(),
+                CheckboxColumn::make('status')->sortable(),
+                TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 EditAction::make(),
-                ReplicateAction::make()
             ])
             ->bulkActions([
                 BulkActionGroup::make([
