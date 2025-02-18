@@ -8,6 +8,7 @@ class About extends Model
 {
     protected $fillable = [
         'description',
+        'privacy',
         'thumbnail',
         'video_type',
         'video',

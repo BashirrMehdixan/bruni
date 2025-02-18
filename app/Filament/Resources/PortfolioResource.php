@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AboutResource\Pages;
-use App\Filament\Resources\AboutResource\RelationManagers;
-use App\Models\About;
+use App\Filament\Resources\PortfolioResource\Pages;
+use App\Filament\Resources\PortfolioResource\RelationManagers;
+use App\Models\Portfolio;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -12,10 +12,10 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
-use Filament\Tables\Actions\EditAction;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
@@ -24,11 +24,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AboutResource extends Resource
+class PortfolioResource extends Resource
 {
-    protected static ?string $model = About::class;
-    protected static ?string $pluralLabel = 'About';
-    protected static ?string $navigationIcon = 'fas-circle-info';
+    protected static ?string $model = Portfolio::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -36,33 +36,25 @@ class AboutResource extends Resource
             ->schema([
                 Section::make()->schema([
                     RichEditor::make('description'),
-                    RichEditor::make('privacy'),
-                    Select::make('video_type')->options([
+                    Select::make('file_type')->options([
                         'video' => 'Video',
-                        'url' => 'Url'
+                        'image' => 'Image',
+                        'url' => 'Url',
+
                     ])
+                        ->native(false)
+                        ->preload()
                         ->live()
                         ->afterStateUpdated(function (callable $set) {
                             $set('video', null);
                             $set('url', null);
+                            $set('image', null);
                         })
-                        ->native(false)
                         ->default('video'),
-                    TextInput::make('url')
-                        ->label('URL')
-                        ->hidden(fn(Get $get) => $get('video_type') !== 'url')
-                        ->maxLength(255)
-                        ->required(fn(Get $get) => $get('video_type') === 'url'),
-                    FileUpload::make('video')
-                        ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mpeg', 'video/quicktime'])
-                        ->hidden(fn(Get $get) => $get('video_type') !== 'video')
-                        ->required(fn(Get $get) => $get('video_type') === 'video')
-                        ->directory('uploads/videos/about'),
-                ])->columnSpan(2),
-                Section::make()->schema([
-                    FileUpload::make('thumbnail')->image()->imageEditor()->directory('uploads/images/about')->columnSpan(1)
-                ])->columnSpan(1)
-            ])->columns(3);
+                    TextInput::make('file')->label('Video URL')->hidden(fn(Get $get) => $get('file_type') !== 'url'),
+                    FileUpload::make('file')->hidden(fn(Get $get) => $get('file_type') == 'url')->directory('uploads/portfolio')
+                ]),
+            ]);
     }
 
     public static function table(Table $table): Table
@@ -99,9 +91,9 @@ class AboutResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAbouts::route('/'),
-            'create' => Pages\CreateAbout::route('/create'),
-            'edit' => Pages\EditAbout::route('/{record}/edit'),
+            'index' => Pages\ListPortfolios::route('/'),
+            'create' => Pages\CreatePortfolio::route('/create'),
+            'edit' => Pages\EditPortfolio::route('/{record}/edit'),
         ];
     }
 }

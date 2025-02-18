@@ -32,12 +32,16 @@ class BranchResource extends Resource
             ->schema([
                 Section::make()->schema([
                     TextInput::make('title'),
+                    Select::make('type')->options([
+                        'galleries' => 'Galleries',
+                        'agents' => 'Agents'
+                    ])->native(false)->preload()->searchable(),
                     TextInput::make('city'),
                     TextInput::make('address'),
                     TextInput::make('phone'),
                     TextInput::make('email'),
                     TextInput::make('website'),
-                    ToggleButtons::make('status')->boolean()->grouped()->default(true)
+                    ToggleButtons::make('status')->columnSpan('full')->boolean()->grouped()->default(true)
                 ])->columns(2)
             ]);
     }
@@ -47,10 +51,7 @@ class BranchResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')->searchable()->sortable(),
-                Select::make('type')->options([
-                    'galleries' => 'Galleries',
-                    'agents' => 'Agents'
-                ])->native(false)->preload()->searchable(),
+                TextColumn::make('type')->searchable()->sortable(),
                 TextColumn::make('city')->searchable()->sortable(),
                 TextColumn::make('address')->searchable()->sortable(),
                 TextColumn::make('phone')->searchable()->sortable(),

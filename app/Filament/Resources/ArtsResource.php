@@ -55,6 +55,7 @@ class ArtsResource extends Resource
                 Section::make()->schema([
                     FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/arts')->columnSpan('full'),
                     ToggleButtons::make('store')->label('Show in Work')->boolean()->grouped()->default(true),
+                    ToggleButtons::make('portfolio')->label('Show in Portfolio')->boolean()->grouped()->default(true),
                     ToggleButtons::make('work')->label('Show in Work')->boolean()->grouped()->default(true),
                     ToggleButtons::make('status')->boolean()->grouped()->default(true),
                 ])->columnSpan(1)->columns(2)
@@ -70,6 +71,7 @@ class ArtsResource extends Resource
                 TextColumn::make('category.title')->label('Category')->sortable()->searchable(),
                 CheckboxColumn::make('store')->sortable(),
                 CheckboxColumn::make('work')->sortable(),
+                CheckboxColumn::make('portfolio')->sortable(),
                 CheckboxColumn::make('status')->sortable(),
                 TextColumn::make('created_at')->dateTime()->label('Time')->sortable(),
             ])

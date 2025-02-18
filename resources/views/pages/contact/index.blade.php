@@ -15,259 +15,72 @@
                     </li>
                 @endisset
             </ul>
-            <div class="text-white/65 grid gird-cols-1 md:grid-cols-2 my-8 border-b border-main/55">
-                <div class="pb-5">
-                    <h4 class="title text-5xl font-semibold uppercase pb-5">
-                        Galleries
-                    </h4>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
+            @isset($branches)
+                <div class="text-white/65 grid gird-cols-1 md:grid-cols-2 my-8 border-b mt-16 border-main/55">
+                    <div class="pb-5">
+                        <h4 class="title text-5xl font-semibold uppercase ">
+                            Galleries
+                        </h4>
+                        @foreach($branches->where('type', 'galleries') as $branch)
+                            <ul class="text-sm space-y-2.5 mt-12 mb-20">
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->city }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->title }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->address }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    +47 22 01 24 20
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    <a href="mailto:galleri@fineart.no">
+                                        galleri@fineart.no
+                                    </a>
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    <a href="https://fineart.no">
+                                        www.fineart.no
+                                    </a>
+                                </li>
+                            </ul>
+                        @endforeach
+                    </div>
+                    <div class="pb-5">
+                        <h4 class="title text-5xl font-semibold uppercase">
+                            Agents
+                        </h4>
+                        @foreach($branches->where('type', 'agents') as $branch)
+                            <ul class="text-sm space-y-2.5 mt-12 mb-20">
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->city }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->title }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    {{ $branch->address }}
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    +47 22 01 24 20
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    <a href="mailto:galleri@fineart.no">
+                                        galleri@fineart.no
+                                    </a>
+                                </li>
+                                <li class="first:text-3xl first:font-semibold last:text-main">
+                                    <a href="https://fineart.no">
+                                        www.fineart.no
+                                    </a>
+                                </li>
+                            </ul>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="pb-5">
-                    <h4 class="title text-5xl font-semibold uppercase pb-5">
-                        Agents
-                    </h4>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="text-sm space-y-2.5 mb-12">
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            NORWAY
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            GALLERI FINEART
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            Filipstad Brygge 2
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            OSLO 0252
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            +47 22 01 24 20
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="mailto:galleri@fineart.no">
-                                galleri@fineart.no
-                            </a>
-                        </li>
-                        <li class="first:text-3xl first:font-semibold last:text-main">
-                            <a href="https://fineart.no">
-                                www.fineart.no
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+            @endisset
             @isset($contact)
                 <div class="mb-8">
                     <h3

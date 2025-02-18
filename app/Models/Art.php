@@ -16,10 +16,11 @@ class Art extends Model
         'category_id',
         'price',
         'store',
+        'portfolio',
         'work',
         'thumbnail',
         'description',
-        'status'
+        'status',
     ];
 
     public function sluggable(): array
