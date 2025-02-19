@@ -12,4 +12,10 @@ class AboutController extends Controller
         $about = About::first();
         return view('pages.about.index', compact('about'));
     }
+
+    public function privacy()
+    {
+        $privacy = About::first();
+        return view('pages.about.privacy', compact('privacy'));
+    }
 }

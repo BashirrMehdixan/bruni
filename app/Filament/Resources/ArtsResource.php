@@ -54,7 +54,7 @@ class ArtsResource extends Resource
                 ])->columns(2)->columnSpan(2),
                 Section::make()->schema([
                     FileUpload::make('thumbnail')->label('Image')->image()->imageEditor()->directory('uploads/images/arts')->columnSpan('full'),
-                    ToggleButtons::make('store')->label('Show in Work')->boolean()->grouped()->default(true),
+                    ToggleButtons::make('store')->label('Show in Store')->boolean()->grouped()->default(true),
                     ToggleButtons::make('portfolio')->label('Show in Portfolio')->boolean()->grouped()->default(true),
                     ToggleButtons::make('work')->label('Show in Work')->boolean()->grouped()->default(true),
                     ToggleButtons::make('status')->boolean()->grouped()->default(true),

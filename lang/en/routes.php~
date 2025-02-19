@@ -2,7 +2,7 @@
 return [
     "index" => "/",
     "about" => "about",
-    "privacy" => "privacy-policy",
+    "privacy" => "privacy",
     "contact" => "contact",
     "works" => "works",
     "fine" => "fine-arts",

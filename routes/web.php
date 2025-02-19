@@ -32,6 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         // Static
         Route::get(LaravelLocalization::transRoute('routes.index'), [IndexController::class, 'index'])->name('index');
         Route::get(LaravelLocalization::transRoute('routes.about'), [AboutController::class, 'index'])->name('about.index');
+        Route::get(LaravelLocalization::transRoute('routes.privacy'), [AboutController::class, 'privacy'])->name('about.privacy');
         Route::get(LaravelLocalization::transRoute('routes.contact'), [ContactController::class, 'index'])->name('contact.index');
         Route::get(LaravelLocalization::transRoute('routes.works'), [WorksController::class, 'index'])->name('works.index');
         // Fine arts
