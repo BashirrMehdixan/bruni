@@ -12,7 +12,7 @@ class MoreController extends Controller
 {
     public function index()
     {
-        $mores = More::orderBy('created_at', 'desc')->where('status', 1)->get();
+        $mores = More::orderBy('created_at', 'asc')->where('status', 1)->get();
         $collections = Collection::orderBy('created_at', 'asc')->where('status', 1)->get();
         return view('pages.more.index', compact('mores', 'collections'));
     }

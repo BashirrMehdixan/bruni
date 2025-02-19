@@ -19,7 +19,7 @@ class FineArtController extends Controller
         if (!$category) {
             abort(404);
         }
-        $arts = $category->arts()->orderBy('created_at', 'desc')->where('status', 1)->get();
+        $arts = $category->arts()->orderBy('created_at', 'asc')->where('status', 1)->get();
         return view('pages.fineart.show', compact('arts', 'category'));
     }
 }

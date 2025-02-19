@@ -9,7 +9,7 @@ class WorksController extends Controller
 {
     public function index()
     {
-        $works = Art::orderBy('created_at', 'desc')->where('status', 1)->where('work', 1)->get();
+        $works = Art::orderBy('created_at', 'asc')->where('status', 1)->where('work', true)->get();
         return view('pages.works.index', compact('works'));
     }
 }
