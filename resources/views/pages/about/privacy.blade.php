@@ -7,8 +7,9 @@
         @if($privacy->privacy)
             <section class="pt-[200px]">
                 <div class="container">
-                    <div class="text-white/65 [&>*]:mb-3"></div>
-                    {!! $privacy->privacy !!}
+                    <div class="text-white/65 [&>*]:mb-3">
+                        {!! $privacy->privacy !!}
+                    </div>
                 </div>
             </section>
         @endif
