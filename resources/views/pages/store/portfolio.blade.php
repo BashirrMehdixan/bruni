@@ -39,7 +39,7 @@
                                 <a href="{{ asset('storage/'.$art->thumbnail) }}" data-fancybox
                                    class="block size-full">
                                     <img src="{{ asset('storage/'.$art->thumbnail) }}" alt="{{ $art->title }}"
-                                         class="size-full transition duration-500 grayscale hover:grayscale-0 object-cover">
+                                         class="size-full transition duration-500 object-cover">
                                 </a>
                             </div>
                         @endforeach

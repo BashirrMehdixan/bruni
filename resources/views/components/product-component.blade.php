@@ -1,6 +1,6 @@
 @props(['art'])
 <div class="grid grid-cols-1 md:grid-cols-3 place-items-center mb-16 text-white/55">
-    <div class="w-[270px] max-h-[310px] mb-5 overflow-hidden">
+    <div class="w-[270px] h-[371px] mb-5 overflow-hidden">
         <img src="{{ asset('storage/'.$art->thumbnail) }}" class="size-full object-cover" alt="{{ $art->title }}">
     </div>
     <div class="md:ml-5">
@@ -11,7 +11,7 @@
             <li class="tracking-wider">
                 {!! $art->description !!}
             </li>
-            <li>
+            <li class="text-2xl font-medium pt-3">
                 {{ $art->price }} €
             </li>
         </ul>
