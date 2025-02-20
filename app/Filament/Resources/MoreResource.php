@@ -27,6 +27,10 @@ class MoreResource extends Resource
 {
     protected static ?string $model = More::class;
 
+    protected static ?string $navigationGroup = 'More';
+
+    protected static ?string $pluralLabel = 'More';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

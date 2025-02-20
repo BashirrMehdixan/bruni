@@ -2,12 +2,12 @@
 @section('seo')
     <title>MORE — {{ config('app.name') }}</title>
 @endsection
-@if($collection->title !== 'Press')
+@if($more->title !== 'Press')
     @section('content')
         <section class="pt-[150px] pb-10">
-            <div class="container text-center">
+            <div class="container text-center text-[#a8a8a8] [&>a]:text-main">
                 <div class="w-full md:w-1/2  mx-auto">
-                    <h3 class="text-[#a8a8a8] pb-10">
+                    <h3 class="pb-10">
                         {{ $more->title }}
                     </h3>
                     @if($more->description)
