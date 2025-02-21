@@ -8,10 +8,10 @@
         @isset($about)
             @if($about->video_type == 'video')
                 <video autoplay muted loop src="{{ asset('storage/'.$about->$about) }}"
-                       class="size-full absolute z-0"></video>
+                       class="size-full max-w-[1152px] min-w-[510px] absolute z-0 "></video>
             @elseif($about->video_type == 'url')
                 <iframe
-                    class="absolute size-full pointer-events-none"
+                    class="absolute size-full max-w-[1152px] min-w-[510px] pointer-events-none"
                     id="player"
                     allow="autoplay; encrypted-media"
                     referrerpolicy="strict-origin-when-cross-origin"
