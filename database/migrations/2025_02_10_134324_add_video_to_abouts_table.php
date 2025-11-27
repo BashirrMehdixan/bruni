@@ -23,7 +23,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('abouts', function (Blueprint $table) {
-            //
+            $table->dropColumn(['video_type', 'video', 'url']);
         });
     }
 };

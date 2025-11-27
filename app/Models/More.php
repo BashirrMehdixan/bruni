@@ -18,6 +18,7 @@ class More extends Model
         'cover_photo',
         'description',
         'status',
+        'order'
     ];
 
     protected $casts = [

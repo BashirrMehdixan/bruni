@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <section class="pb-8 pt-[150px]">
-        <div class="container !max-w-[540px] md:!max-w-[720px] lg:!max-w-[905px]">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
                 @isset($works)
                     @foreach($works as $work)
                         <div class="h-[220px]">
@@ -13,7 +13,7 @@
                                class="block size-full">
                                 <img src="{{ asset('storage/'.$work->thumbnail) }}" title="{{ $work->title }}"
                                      alt="{{ $work->title }}"
-                                     class="size-full object-cover transition duration-500">
+                                     class="size-full object-cover transition duration-500 rounded-l-full">
                             </a>
                         </div>
                     @endforeach

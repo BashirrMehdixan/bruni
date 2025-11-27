@@ -50,9 +50,9 @@ class BranchResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('city')->searchable()->sortable(),
                 TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('type')->searchable()->sortable(),
-                TextColumn::make('city')->searchable()->sortable(),
                 TextColumn::make('address')->searchable()->sortable(),
                 TextColumn::make('phone')->searchable()->sortable(),
                 TextColumn::make('email')->searchable()->sortable(),
@@ -64,12 +64,7 @@ class BranchResource extends Resource
             ])
             ->actions([
                 EditAction::make(),
-            ])
-            ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ])->reorderable('order');
     }
 
     public static function getRelations(): array

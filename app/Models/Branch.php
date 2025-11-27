@@ -14,6 +14,7 @@ class Branch extends Model
         'email',
         'website',
         'status',
-        'type'
+        'type',
+        'order',
     ];
 }

@@ -9,7 +9,7 @@ class FineArtController extends Controller
 {
     public function index()
     {
-        $categories = Category::orderBy('order', 'asc')->where('status', 1)->get();
+        $categories = Category::orderBy('order', 'desc')->where('status', 1)->get();
         return view('pages.fineart.index', compact('categories'));
     }
 
@@ -19,7 +19,7 @@ class FineArtController extends Controller
         if (!$category) {
             abort(404);
         }
-        $arts = $category->arts()->orderBy('created_at', 'asc')->where('status', 1)->get();
+        $arts = $category->arts()->orderBy('order', 'desc')->where('status', 1)->get();
         return view('pages.fineart.show', compact('arts', 'category'));
     }
 }

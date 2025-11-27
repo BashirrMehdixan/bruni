@@ -12,15 +12,18 @@ class MoreController extends Controller
 {
     public function index()
     {
-        $mores = More::orderBy('created_at', 'asc')->where('status', 1)->get();
-        $collections = Collection::orderBy('created_at', 'asc')->where('status', 1)->get();
+        $mores = More::orderBy('order', 'desc')->where('status', 1)->get();
+        $collections = Collection::orderBy('order', 'desc')->where('status', 1)->get();
         return view('pages.more.index', compact('mores', 'collections'));
     }
 
     public function show($slug)
     {
         $more = More::where('slug', $slug)->where('status', 1)->first();
-        $collection = Collection::where('id', $more->collection_id)->where('status', 1)->first();
+        $collection = Collection::where(
+            ['status', 1],
+            ['id', $more->collection_id]
+        )->first();
         return view('pages.more.show', compact('more', 'collection'));
     }
 

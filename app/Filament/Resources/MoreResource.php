@@ -19,6 +19,7 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -64,7 +65,7 @@ class MoreResource extends Resource
                 TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('collection.title')->label('Collection')->sortable()->searchable(),
                 TextColumn::make('slug')->searchable()->sortable(),
-                CheckboxColumn::make('status')->sortable(),
+                ToggleColumn::make('status')->sortable(),
                 TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
@@ -72,12 +73,7 @@ class MoreResource extends Resource
             ])
             ->actions([
                 EditAction::make(),
-            ])
-            ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ])->reorderable('order');
     }
 
     public static function getRelations(): array

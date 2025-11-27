@@ -82,12 +82,7 @@ class ArtsResource extends Resource
                 EditAction::make(),
                 DeleteAction::make(),
                 ReplicateAction::make()->label('Duplicate'),
-            ])
-            ->bulkActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ])->reorderable('order');
     }
 
     public static function getRelations(): array

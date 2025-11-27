@@ -15,14 +15,20 @@ class StoreController extends Controller
 
     public function portfolio()
     {
-        $arts = Art::orderBy('created_at', 'asc')->where('status', true)->where('portfolio', true)->get();
+        $arts = Art::orderBy('order', 'desc')->where([
+            ['portfolio', true],
+            ['status', true]
+        ])->get();
         $portfolio = Portfolio::first();
         return view('pages.store.portfolio', compact('arts', 'portfolio'));
     }
 
     public function scarves()
     {
-        $arts = Art::orderBy('created_at', 'asc')->where('status', true)->where('store', true)->get();
+        $arts = Art::orderBy('order', 'desc')->where([
+            ['store', true],
+            ['status', true]
+        ])->get();
         return view('pages.store.scarves', compact('arts'));
     }
 }

@@ -21,7 +21,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('portfolios', function (Blueprint $table) {
-            //
+            $table->dropColumn(['file_type']);
         });
     }
 };

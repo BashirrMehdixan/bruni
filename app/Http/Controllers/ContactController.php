@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function index()
     {
         $contact = Contact::first();
-        $branches = Branch::orderBy('created_at', 'asc')->where('status', 1)->get();
+        $branches = Branch::orderBy('order', 'desc')->where('status', 1)->get();
         return view('pages.contact.index', compact('contact', 'branches'));
     }
 }
