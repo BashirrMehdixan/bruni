@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\AboutResource\Pages;
 use App\Filament\Resources\AboutResource\RelationManagers;
 use App\Models\About;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -34,33 +35,39 @@ class AboutResource extends Resource
     {
         return $form
             ->schema([
-                Section::make()->schema([
-                    RichEditor::make('description'),
-                    RichEditor::make('privacy'),
-                    Select::make('video_type')->options([
-                        'video' => 'Video',
-                        'url' => 'Url'
-                    ])
-                        ->live()
-                        ->afterStateUpdated(function (callable $set) {
-                            $set('video', null);
-                            $set('url', null);
-                        })
-                        ->native(false)
-                        ->default('video'),
-                    TextInput::make('url')
-                        ->label('URL')
-                        ->hidden(fn(Get $get) => $get('video_type') !== 'url')
-                        ->maxLength(255)
-                        ->required(fn(Get $get) => $get('video_type') === 'url'),
-                    FileUpload::make('video')
-                        ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mpeg', 'video/quicktime'])
-                        ->hidden(fn(Get $get) => $get('video_type') !== 'video')
-                        ->required(fn(Get $get) => $get('video_type') === 'video')
-                        ->directory('uploads/videos/about'),
+                Fieldset::make()->schema([
+                    Section::make('Content')->schema([
+                        RichEditor::make('description'),
+                        RichEditor::make('privacy'),
+                    ])->columnSpan(2)
                 ])->columnSpan(2),
-                Section::make()->schema([
-                    FileUpload::make('thumbnail')->image()->imageEditor()->directory('uploads/images/about')->columnSpan(1)
+                Fieldset::make()->schema([
+                    Section::make('Thumbnail')->schema([
+                        FileUpload::make('thumbnail')->image()->imageEditor()->directory('uploads/images/about')->columnSpan(1),
+                    ]),
+                    Section::make('Video')->schema([
+                        Select::make('video_type')->options([
+                            'video' => 'Video',
+                            'url' => 'Url'
+                        ])
+                            ->live()
+                            ->afterStateUpdated(function (callable $set) {
+                                $set('video', null);
+                                $set('url', null);
+                            })
+                            ->native(false)
+                            ->default('video'),
+                        TextInput::make('url')
+                            ->label('URL')
+                            ->hidden(fn(Get $get) => $get('video_type') !== 'url')
+                            ->maxLength(255)
+                            ->required(fn(Get $get) => $get('video_type') === 'url'),
+                        FileUpload::make('video')
+                            ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mpeg', 'video/quicktime'])
+                            ->hidden(fn(Get $get) => $get('video_type') !== 'video')
+                            ->required(fn(Get $get) => $get('video_type') === 'video')
+                            ->directory('uploads/videos/about'),
+                    ])
                 ])->columnSpan(1)
             ])->columns(3);
     }

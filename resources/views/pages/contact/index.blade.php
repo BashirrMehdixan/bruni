@@ -3,7 +3,7 @@
     <title>CONTACT — {{ config('app.name') }}</title>
 @endsection
 @section('content')
-    <section class="pt-[200px]" x-data="{modalIsOpen: !false}">
+    <section class="pt-[200px]" x-data="{modalIsOpen: false}">
         <div class="text-white">
             <div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen"
                  x-on:keydown.esc.window="modalIsOpen = false" x-on:click.self="modalIsOpen = false"
