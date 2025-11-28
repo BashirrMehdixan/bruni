@@ -27,8 +27,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Route::get(LaravelLocalization::transRoute('routes.more.show'), [MoreController::class, 'show'])->name('more.show');
         Route::get(LaravelLocalization::transRoute('routes.more.press'), [MoreController::class, 'press'])->name('more.press');
         // Store
-        Route::get(LaravelLocalization::transRoute('routes.store'), [StoreController::class, 'index'])->name('store.index');
-        Route::get(LaravelLocalization::transRoute('routes.store.portfolio'), [StoreController::class, 'portfolio'])->name('store.portfolio');
-        Route::get(LaravelLocalization::transRoute('routes.store.scarves'), [StoreController::class, 'scarves'])->name('store.scarves');
+        Route::prefix('store')->group(function () {
+            Route::get(LaravelLocalization::transRoute('routes.store'), [StoreController::class, 'index'])->name('store.index');
+            Route::get(LaravelLocalization::transRoute('routes.store.portfolio'), [StoreController::class, 'portfolio'])->name('store.portfolio');
+            Route::get(LaravelLocalization::transRoute('routes.store.scarves'), [StoreController::class, 'scarves'])->name('store.scarves');
+        });
     });
 });

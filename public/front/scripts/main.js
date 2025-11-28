@@ -9,10 +9,12 @@ if (fineElements.length) {
 
     fineElements.forEach(element => {
         element.addEventListener('mouseover', ({target}) => {
+            console.log(target);
             fineElements.forEach(el => el.classList.toggle('active', el === target));
             bgFines.forEach(bg => bg.classList.replace('opacity-100', 'opacity-0'));
 
             const activeBg = document.querySelector(`#${target.dataset.art}`);
+            console.log(activeBg);
             activeBg?.classList.replace('opacity-0', 'opacity-100');
         });
     });
