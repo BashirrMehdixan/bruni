@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AppealResource\Pages;
-use App\Filament\Resources\AppealResource\RelationManagers;
 use App\Models\Appeal;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -18,13 +17,19 @@ class AppealResource extends Resource
 {
     protected static ?string $model = Appeal::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-envelope';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-
+                Forms\Components\Section::make('Appeal Details')->schema([
+                    Forms\Components\TextInput::make('name'),
+                    Forms\Components\TextInput::make('phone_number'),
+                    Forms\Components\TextInput::make('email'),
+                    Forms\Components\TextInput::make('title'),
+                    Forms\Components\RichEditor::make('message')->columnSpanFull(),
+                ])->columns(2)->columnSpanFull(),
             ]);
     }
 
@@ -42,7 +47,7 @@ class AppealResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\DeleteAction::make()
             ]);
     }
@@ -59,7 +64,7 @@ class AppealResource extends Resource
         return [
             'index' => Pages\ListAppeals::route('/'),
 //            'create' => Pages\CreateAppeal::route('/create'),
-            'edit' => Pages\EditAppeal::route('/{record}/edit'),
+//            'edit' => Pages\EditAppeal::route('/{record}/edit'),
         ];
     }
 }
