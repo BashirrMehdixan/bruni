@@ -4,6 +4,7 @@ return [
     "about" => "about",
     "privacy" => "privacy-policy",
     "contact" => "contact",
+    "send" => "send",
     "works" => "works",
     "fine" => "fine-arts",
     "fine.show" => "fine-arts/{slug}",

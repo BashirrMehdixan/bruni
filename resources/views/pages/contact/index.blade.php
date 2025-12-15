@@ -13,9 +13,10 @@
                 <div x-show="modalIsOpen"
                      x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity"
                      x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                     class="flex max-w-lg flex-col gap-1 overflow-hidden rounded-radius border border-main/55 bg-black text-on-surface rounded-md">
+                     class="flex w-full md:max-w-3xl flex-col gap-1 overflow-hidden rounded-radius border border-main/55 bg-black text-on-surface rounded-md">
                     <!-- Dialog Header -->
-                    <div class="flex items-center justify-between border-b border-main/55 border-outline bg-black/60 p-4">
+                    <div
+                        class="flex items-center justify-between border-b border-main/55 border-outline bg-black/60 p-4">
                         <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-on-surface-strong">
                             Contact us
                         </h3>
@@ -27,37 +28,46 @@
                         </button>
                     </div>
                     <!-- Dialog Body -->
-                    <div class="px-4">
-                        <form action="" class="py-1.5">
+                    <form action="{{ route('front.contact.send') }}" method="POST" class="py-1.5">
+                        @csrf
+                        <div class="px-4">
                             <div class="grid grid-cols-12 gap-2 text-white/55">
                                 <div class="col-span-6">
-                                    <input type="text" id="name" name="name" placeholder="Name"
-                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md">
+                                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Name"
+                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md transition-all duration-400">
                                 </div>
                                 <div class="col-span-6">
-                                    <input type="email" id="email" name="email" placeholder="Email"
-                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md">
+                                    <input type="text" id="phone_number" name="phone_number" value="{{ old('phone_number') }}" placeholder="Phone number"
+                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md transition-all duration-400">
+                                </div>
+                                <div class="col-span-6">
+                                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email"
+                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md transition-all duration-400">
+                                </div>
+                                <div class="col-span-6">
+                                    <input type="text" id="title" name="title" value="{{ old('title') }}" placeholder="Title"
+                                           class="w-full px-4 py-2 bg-transparent border border-main/55 rounded-md transition-all duration-400">
                                 </div>
                                 <div class="col-span-full">
-                                    <textarea placeholder="Message"
+                                    <textarea value="{{ old('message') }}" placeholder="Message" id="message" name="message"
                                               class="w-full p-3 bg-transparent border border-main/55 rounded-md resize-none"
                                               rows="5"></textarea>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <!-- Dialog Footer -->
-                    <div
-                        class="flex flex-col-reverse justify-between gap-2 border-t border-main/55 border-outline bg-black-alt/60 px-4 py-2 sm:flex-row sm:items-center md:justify-end">
-                        <button x-on:click="modalIsOpen = false" type="button"
-                                class="whitespace-nowrap rounded-radius px-4 py-2 text-center text-sm font-medium tracking-wide text-on-surface transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 dark:text-on-surface-dark dark:focus-visible:outline-primary-dark">
-                            Close
-                        </button>
-                        <button x-on:click="modalIsOpen = false" type="button"
-                                class="whitespace-nowrap rounded-md bg-main/55 border border-transparent px-4 py-2 text-center text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0">
-                            Send
-                        </button>
-                    </div>
+                        </div>
+                        <!-- Dialog Footer -->
+                        <div
+                            class="flex flex-col-reverse justify-between gap-2 border-t border-main/55 border-outline bg-black-alt/60 px-4 py-2 sm:flex-row sm:items-center md:justify-end">
+                            <button x-on:click="modalIsOpen = false" type="button"
+                                    class="whitespace-nowrap rounded-radius px-4 py-2 text-center text-sm font-medium tracking-wide text-on-surface transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 dark:text-on-surface-dark dark:focus-visible:outline-primary-dark">
+                                Close
+                            </button>
+                            <button type="submit"
+                                    class="whitespace-nowrap rounded-md bg-main/55 border border-transparent px-4 py-2 text-center text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0">
+                                Send
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -109,6 +119,21 @@
                         <h4 class="title text-5xl font-semibold uppercase mb-3">
                             Contact us
                         </h4>
+                        @if (session('success'))
+                            <div class="mb-4 rounded-md bg-green-600/20 border border-green-600 text-green-400 px-4 py-2">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        @if ($errors->any())
+                            <div class="mb-4 rounded-md bg-red-600/20 border border-red-600 text-red-400 px-4 py-2">
+                                <ul class="space-y-1">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <button x-on:click="modalIsOpen = true" type="button"
                                 class="w-full whitespace-nowrap rounded-md border border-transparent bg-main/55 px-4 py-2 text-center text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 active:opacity-100 active:outline-offset-0">
                             Send me message

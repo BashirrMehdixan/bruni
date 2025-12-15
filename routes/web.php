@@ -18,7 +18,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Route::get(LaravelLocalization::transRoute('routes.about'), [AboutController::class, 'index'])->name('about.index');
         Route::get(LaravelLocalization::transRoute('routes.privacy'), [AboutController::class, 'privacy'])->name('about.privacy');
         Route::get(LaravelLocalization::transRoute('routes.contact'), [ContactController::class, 'index'])->name('contact.index');
-        Route::get(LaravelLocalization::transRoute('routes.works'), [WorksController::class, 'index'])->name('works.index');
+        Route::prefix('contact')->group(function () {
+            Route::post(LaravelLocalization::transRoute('routes.send'), [ContactController::class, 'contact'])->name('contact.send');
+            Route::get(LaravelLocalization::transRoute('routes.works'), [WorksController::class, 'index'])->name('works.index');
+        });
         // Fine arts
         Route::get(LaravelLocalization::transRoute('routes.fine'), [FineArtController::class, 'index'])->name('fine.index');
         Route::get(LaravelLocalization::transRoute('routes.fine.show'), [FineArtController::class, 'show'])->name('fine.show');
